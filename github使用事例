@@ -1,0 +1,25 @@
+1.新建文件夹t1
+mkdir t1
+2.进入新创建的文件夹
+cd t1
+3.建立本地仓库
+git init
+4.进入本地仓库
+cd .git
+5.将main.cpp放进t1文件夹
+6.将main.cpp放进本地仓库
+git add main.cpp(如果多个文件一起放可以git add .)
+
+7.增加一个commit
+git commit -m '增加文件'
+8.git log
+9.进行修改文件
+gedit main.cpp
+增加一行
+10.git add main.cpp
+11.git status(查看状态）
+12.git diff
+13.git commit -m '增加一行'
+14.git log
+15.github上创建分支t1
+16.本地添加仓库地址t1终端里粘贴

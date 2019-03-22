@@ -1,0 +1,111 @@
+1.本地库初始化
+命令：git init
+注意：.git目录存放的是本地库相关的子目录和文件，不要删除，不要修改
+2.查看本地库状态
+命令：git status
+注意：如果没有文件显示空，有文件没有添加暂存区显示红色，添加暂存区后显示绿色。
+3.使用viw创建文件
+命令：vim <文件名>
+例：vim first.txt
+4.添加文件到暂存区
+命令：git add <文件名>
+例：git add first.txt
+注意：多个文件一起添加可输入 git add .
+5.移出暂存区，恢复之前状态
+命令:git rm --cached <文件名>
+例:git rm --cached first.txt
+6.提交到本地库
+命令:git commit <文件名>
+例:git commit first.txt
+注意:可在这步直接添加注释
+命令:git commit -m "第一次提交" first.txt
+7.查看版本记录
+命令:git log
+注意:当版本特别多时,不易阅览,可以换简洁格式
+命令:git log --pretty=oneline
+     git log --oneline
+     git reflog
+8.使用指针到以往版本
+命令:git reset --hard <索引号>
+注意:索引号使用git reflog浏览以往版本
+使用^号
+命令:git reset --hard HEAD^
+一个^表示后退一步,n个表示后退n步;
+使用~号
+命令:git reset --hard HEAD~n
+表示后退n步
+9.删除操作
+命令:rm <文件名>
+例:vim aaa.txt
+   git add aaa.txt
+   git commit -m "new aaa.txt" aaa.txt
+   git status
+   rm aaa.txt
+   ll
+   git status
+   git add aaa.txt
+   git status
+   git commit -m "delete aaa.txt" aaa.txt
+   git status
+10.文件比较
+命令:git diff
+默认和暂存区版本比较
+命令:git diff HEAD apple.txt
+和本地库版本比较
+命令:git diff HEAD^ apple.txt
+和本地库中上一版本文件比较
+11.分之操作
+查看分之
+命令:git branch -v
+注意:一般只有master
+添加新分之
+命令:git branch <分之名>
+例;git branch hot_fix
+查看分之
+命令:git branch -v
+注意:显示两个分之
+切换分之
+命令:git checkout hot_fix
+注意:当前分之为hot_fix(显示绿色)
+合并分之
+第一步:切换到接受修改的分支(被合并,增加新内容)上
+命令:git checkout <被合并分支名>
+第二步:执行merge命令
+命令:git merge <有新内容分支名>
+12.git中保存github仓库地址
+git中查看保存的地址
+命令:git remote -v
+保存地址操作
+命令:git remote add <给地址取名> <地址>
+13.推送
+命令:git push <给地址取名> <分支>
+例:git push origin master   
+14.克隆远程库
+命令:git clone <地址>
+注意是否需要新建本地库
+*完整的把远程库下载到本地
+*创建origin远程地址别名
+*初始化本地库
+15.远程库抓取
+命令:git fetch origin master
+16.切换本地库文件
+命令:git checkout origin/master
+注意:意思是切换到刚抓取的文件
+命令:git checkout master
+又切换到master
+17.合并本地库
+命令:git merge origin/master
+将远程下载的库合并到本地自己原来的库
+18.跨团队协作
+*fork远程库
+*git clone
+*git push
+*Pull request
+*new request
+*creat  pull request
+*merge pull request
+
+
+
+
+
